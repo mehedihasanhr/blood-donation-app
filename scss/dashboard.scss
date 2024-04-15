@@ -1,0 +1,137 @@
+@import 'global';
+
+.dashboard-container {
+  background-color: #fff;
+  padding: 1rem;
+  height: 100vh;
+}
+
+.header {
+  padding-inline: 1rem;
+  .nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 1rem;
+
+    & > li.nav-item a {
+      display: inline-block;
+      padding: 0.5rem 1.2rem;
+      border: 1px solid #f2f2f2;
+      border-radius: 6px;
+      background: #fefefe;
+      cursor: pointer;
+      text-decoration: none;
+      color: #131313;
+      transition: all 0.2s ease-in-out;
+      box-shadow:
+        inset 0 0 5px rgb(0 0 0 / 3%),
+        inset 0 0 13px rgb(0 0 0 / 6%);
+
+      &:hover {
+        box-shadow:
+          inset 0 0 10px rgb(0 0 0 / 10%),
+          inset 0 0 20px rgb(0 0 0 / 6%);
+      }
+
+      &[data-active='true'] {
+        // background: rgb(255 0 0 / 90%);
+        box-shadow:
+          inset 0 0 10px rgb(255 0 0 / 20%),
+          inset 0 0 20px rgb(255 0 0 / 30%);
+      }
+    }
+  }
+}
+
+.tab-content {
+  display: none;
+  padding: 1.5rem 1rem;
+
+  &[data-show='true'] {
+    display: block;
+  }
+
+  & > div.nav {
+    margin-bottom: 1rem;
+  }
+}
+
+.division-container,
+.district-container,
+.thana-container {
+  display: flex;
+  @media (max-width: 576px) {
+    flex-wrap: wrap-reverse;
+    & > .data-form {
+      max-width: 100%;
+      margin-bottom: 2rem;
+      margin-left: 0;
+      padding: 0;
+    }
+  }
+}
+
+.data-form {
+  width: 100%;
+  padding: 0 1rem;
+  max-width: 300px;
+  margin-left: 1rem;
+  overflow: hidden;
+  transition: width 0.4s ease-in-out;
+
+  & > label {
+    font-size: 14px;
+    display: block;
+    color: rgb(0 0 0 / 70%);
+    margin-bottom: 6px;
+  }
+
+  & > select {
+    @include appearance;
+    width: 100%;
+    border: 1px solid #eee;
+    position: relative;
+
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 24" width="24" height="24" fill="gray"><path d="M12 15.59L6.71 10.29a1.004 1.004 0 00-1.42 1.42l6 6a1.004 1.004 0 001.42 0l6-6a1.004 1.004 0 00-1.42-1.42z"/></svg>'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right center;
+    border-radius: 4px;
+
+    &:after {
+      content: 'content'; /* Add the content here */
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+    }
+
+    & > option {
+      @include appearance;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  & > input[type='text'],
+  & > select {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid rgb(0 0 0 / 10%);
+
+    &:focus {
+      outline: 1px solid rgb(0 0 0 / 30%);
+    }
+
+    &::placeholder {
+      color: rgb(0 0 0 / 40%);
+    }
+  }
+}
+
+.data-table-container {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: auto;
+}

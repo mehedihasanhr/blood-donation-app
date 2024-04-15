@@ -1,0 +1,138 @@
+@import 'global';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fff;
+    width: fit-content;
+    padding: 4px 32px 4px 48px;
+    box-shadow: 0 0 6px rgb(0 0 0 / 10%);
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    color: #f50707;
+
+    & > svg {
+      width: 2.3rem;
+      height: 2.3rem;
+      color: #f50707;
+    }
+
+    &-content {
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+
+  .be-a-donor-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: #f50707;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+
+    & > svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    &:hover {
+      color: #fff;
+      background: #f50707;
+
+      & > svg {
+        stroke: #fff;
+      }
+    }
+
+    @media (max-width: 576px) {
+      color: #ff2f2f;
+      background: #f0e9e9;
+      font-weight: 500;
+
+      & > svg {
+        stroke: #ff2f2f;
+      }
+    }
+  }
+}
+
+.filter-bar h4 {
+  color: red;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.search-filter {
+  @include appearance;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #eee;
+  position: relative;
+  line-height: 1.5;
+
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 24" width="24" height="24" fill="gray"><path d="M12 15.59L6.71 10.29a1.004 1.004 0 00-1.42 1.42l6 6a1.004 1.004 0 001.42 0l6-6a1.004 1.004 0 00-1.42-1.42z"/></svg>'); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right center;
+  border-radius: 4px;
+
+  &:after {
+    content: 'content'; /* Add the content here */
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  & > option {
+    @include appearance;
+    padding: 0.5rem 1rem;
+  }
+}
+
+.filter-options {
+  display: -moz-grid;
+  display: -ms-grid;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(10, 1fr);
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  & > div {
+    grid-column: span 2;
+
+    @media (max-width: 992px) {
+      grid-column: span 4;
+    }
+
+    @media (max-width: 768px) {
+      grid-column: span 6;
+    }
+
+    @media (max-width: 576px) {
+      grid-column: span 12;
+    }
+  }
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  display: block;
+  margin-bottom: 0.25rem;
+}

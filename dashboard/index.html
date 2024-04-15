@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="container dashboard-container">
+      <header class="header">
+        <nav class="nav">
+          <ul class="tab">
+            <li class="nav-item">
+              <a
+                href="#division-tab"
+                class="tab-toggler"
+                data-target="#division-tab"
+                data-active="true"
+                >Division</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="#district-tab"
+                class="tab-toggler"
+                data-target="#district-tab"
+              >
+                District
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#thana-tab" class="tab-toggler" data-target="#thana-tab">
+                Thana
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <!-- division tab -->
+        <div
+          id="division-tab"
+          class="tab-content division-tab"
+          data-show="true"
+        >
+          <div class="nav">
+            <h2>Division</h2>
+          </div>
+
+          <div class="division-container">
+            <div class="data-table-container">
+              <table id="division-table" class="data-table">
+                <thead class="data-table-header">
+                  <tr class="data-table-tr">
+                    <th class="data-table-th">#</th>
+                    <th class="data-table-th">English Name</th>
+                    <th class="data-table-th">Bangla Name</th>
+                  </tr>
+                </thead>
+
+                <tbody class="data-table-body">
+                  <tr class="data-table-tr">
+                    <td class="data-table-td" colspan="3">Loading...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <form id="division-adding-form" class="data-form">
+              <label for="">Slug</label>
+              <input name="slug" type="text" placeholder="Division slug..." />
+              <label for="">English name</label>
+              <input
+                name="en_name"
+                type="text"
+                placeholder="Division english name..."
+              />
+              <label for="">Bangla name</label>
+              <input
+                name="bn_name"
+                type="text"
+                placeholder="Division bangla name..."
+              />
+
+              <input type="submit" class="btn" />
+            </form>
+          </div>
+        </div>
+        <div id="district-tab" class="tab-content district-tab w-100">
+          <div class="nav">
+            <h2>District</h2>
+          </div>
+
+          <div class="division-container w-100">
+            <div class="data-table-container">
+              <table id="district-table" class="data-table">
+                <thead class="data-table-header">
+                  <tr class="data-table-tr">
+                    <th class="data-table-th">#</th>
+                    <th class="data-table-th">Slug</th>
+                    <th class="data-table-th">English name</th>
+                    <th class="data-table-th">Bangla name</th>
+                    <th class="data-table-th">Division</th>
+                  </tr>
+                </thead>
+
+                <tbody class="data-table-body">
+                  <tr class="data-table-tr">
+                    <td class="data-table-td" colspan="3">Loading...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <form id="district-adding-form" class="data-form">
+              <label for="">Slug</label>
+              <input name="slug" type="text" placeholder="Division slug..." />
+              <label for="">English name</label>
+              <input
+                name="en_name"
+                type="text"
+                placeholder="District english name..."
+              />
+              <label for="">Bangla name</label>
+              <input
+                name="bn_name"
+                type="text"
+                placeholder="Division bangla name..."
+              />
+              <label for="">Division</label>
+              <select
+                name="division_id"
+                type="text"
+                id="division-list"
+                placeholder="Division bangla name..."
+              >
+                <option value="#" selected disabled>Select Division</option>
+              </select>
+              <input type="submit" class="btn" />
+            </form>
+          </div>
+        </div>
+        <div id="thana-tab" class="tab-content thana-tab">
+          <div class="nav">
+            <h2>Thana</h2>
+          </div>
+
+          <div class="division-container w-100">
+            <div class="data-table-container">
+              <table id="thana-table" class="data-table">
+                <thead class="data-table-header">
+                  <tr class="data-table-tr">
+                    <th class="data-table-th">#</th>
+                    <th class="data-table-th">Slug</th>
+                    <th class="data-table-th">English name</th>
+                    <th class="data-table-th">Bangla name</th>
+                    <th class="data-table-th">District</th>
+                  </tr>
+                </thead>
+
+                <tbody class="data-table-body">
+                  <tr class="data-table-tr">
+                    <td class="data-table-td" colspan="3">Loading...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <form id="thana-adding-form" class="data-form">
+              <label for="">Slug</label>
+              <input name="slug" type="text" placeholder="thana slug..." />
+              <label for="">English name</label>
+              <input
+                name="en_name"
+                type="text"
+                placeholder="Thana english name..."
+              />
+              <label for="">Bangla name</label>
+              <input
+                name="bn_name"
+                type="text"
+                placeholder="Thana bangla name..."
+              />
+              <label for="">District</label>
+              <select
+                name="district_id"
+                type="text"
+                id="district-list"
+                placeholder="Select a district"
+              >
+                <!-- district list -->
+              </select>
+              <input type="submit" class="btn" />
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- icon config -->
+    <script>
+      lucide.createIcons()
+    </script>
+    <!-- custom script -->
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
