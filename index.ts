@@ -11,8 +11,8 @@ app.use(express.urlencoded({ extended: true }))
 // Middleware to parse multipart/form-data
 app.use(upload.none())
 
-app.use(express.static('public'))
 app.use('/api', router)
+app.use(express.static('public'))
 
 const PORT = process.env.PORT
 
