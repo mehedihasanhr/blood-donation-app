@@ -15,6 +15,8 @@ app.use(express.static('public'))
 app.use('/dashboard', express.static('dashboard'))
 app.use('/api', router)
 
-app.listen(5000, () => {
-  console.log(`listening port ${5000}`)
+const PORT = process.env.PORT
+
+app.listen(PORT, () => {
+  console.log(`listening port ${PORT}`)
 })
