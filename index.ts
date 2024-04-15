@@ -12,7 +12,6 @@ app.use(express.urlencoded({ extended: true }))
 app.use(upload.none())
 
 app.use(express.static('public'))
-app.use('/dashboard', express.static('dashboard'))
 app.use('/api', router)
 
 const PORT = process.env.PORT
