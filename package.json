@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && node dist/index.js",
+    "start": "prisma generate && npm run build && node dist/index.js",
     "start:dev": "nodemon --exec npx tsx index.ts",
     "build": "rimraf ./dist && tsc"
   },
