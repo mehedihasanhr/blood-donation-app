@@ -1,6 +1,7 @@
 import express from 'express'
 import router from './routes'
 import multer from 'multer'
+import 'dotenv/config'
 
 const upload = multer()
 const app = express()

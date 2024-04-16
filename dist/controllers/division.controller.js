@@ -46,10 +46,9 @@ class Division {
     insertDivision(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const body = req.body;
-            console.log({ body });
             // validate body data
             if (!body.slug || !body.en_name || !body.bn_name) {
-                return res.status(400).json({ message: 'Provide all required fields.' });
+                return res.status(400).json({ error: 'Provide all required fields.' });
             }
             if (!body) {
                 return res.status(400).json({ error: 'Request body is empty' });

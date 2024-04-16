@@ -15,5 +15,5 @@ router.get('/divisions/s/:slug', division_controller_1.default.divisionBySlug);
 router.post('/divisions', division_controller_1.default.insertDivision);
 // delete
 router.delete('/divisions/:id', division_controller_1.default.deleteDivisionById);
-router.delete('/divisions/:slug', division_controller_1.default.deleteDivisionBySlug);
+router.delete('/divisions/s/:slug', division_controller_1.default.deleteDivisionBySlug);
 exports.default = router;

@@ -48,7 +48,13 @@ class Thana {
             const body = req.body;
             // validate body data
             if (!body.slug || !body.en_name || !body.bn_name || !body.district_id) {
-                return res.status(400).json({ message: 'Provide all required fields.' });
+                return res.status(400).json({ error: 'Provide all required fields.' });
+            }
+            const isAlreadyExist = yield prisma_1.prisma.thana.findUnique({
+                where: { slug: body.slug },
+            });
+            if (isAlreadyExist) {
+                return res.status(400).json({ error: 'Data already exist.' });
             }
             const data = yield prisma_1.prisma.thana.create({
                 data: body,

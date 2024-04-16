@@ -48,7 +48,16 @@ class District {
             const body = req.body;
             // validate body data
             if (!body.slug || !body.en_name || !body.bn_name || !body.division_id) {
-                return res.status(400).json({ message: 'Provide all required fields.' });
+                return res.status(400).json({ error: 'Provide all required fields.' });
+            }
+            // check already slug axios or not
+            const isExist = yield prisma_1.prisma.district.findFirst({
+                where: { slug: body.slug },
+            });
+            if (isExist) {
+                return res
+                    .status(400)
+                    .json({ error: 'A district with these slug already exist.' });
             }
             const data = yield prisma_1.prisma.district.create({
                 data: body,
