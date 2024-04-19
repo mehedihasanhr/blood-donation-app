@@ -14,8 +14,7 @@ app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 // Middleware to parse multipart/form-data
 app.use(upload.none());
-// Serve static files from the 'public' folder
-const publicPath = path_1.default.join(__dirname, 'public'); // Get the absolute path to the 'public' folder
+const publicPath = path_1.default.join('public');
 app.use(express_1.default.static(publicPath));
 app.use('/api', routes_1.default);
 const PORT = process.env.PORT;

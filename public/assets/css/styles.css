@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -8,12 +8,29 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-optical-sizing: auto;
   background-color: #f8f8f8;
   color: #181818;
   width: 100vw;
   height: 100vh;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.text-sm {
+  font-size: 14px;
+}
+.text-base {
+  font-size: 16px;
+}
+.text-md {
+  font-size: 18px;
+}
+.text-lg {
+  font-size: 20px;
 }
 
 .container {
@@ -33,17 +50,87 @@ body {
   }
 }
 
-.text-sm {
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #f8f8f8;
+  padding: 6px 12px 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.btn > svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.5;
+  color: #353535;
+}
+.btn:hover {
+  background: rgba(255, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.btn:hover > svg {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+table {
+  width: 100%;
+  height: fit-content;
+}
+
+th {
   font-size: 14px;
+  color: #444;
+  font-weight: 500;
 }
-.text-base {
-  font-size: 16px;
+
+:is(table, th, td) {
+  border: 1px solid #eee;
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: left;
+  color: #444;
 }
-.text-md {
-  font-size: 18px;
+
+thead tr {
+  background-color: rgb(250, 250, 250);
 }
-.text-lg {
-  font-size: 20px;
+
+tr:nth-child(even) {
+  background-color: rgba(250, 250, 250, 0.7);
+}
+
+tr:hover td {
+  background-color: rgba(255, 0, 0, 0.03);
+  cursor: default;
+}
+
+form > .alert {
+  margin-top: 1rem;
+}
+
+.alert {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+}
+.alert-danger {
+  color: rgba(255, 0, 0, 0.9);
+  background: rgba(255, 0, 0, 0.1);
+}
+.alert:empty {
+  display: none;
 }
 
 .header {
@@ -130,7 +217,7 @@ body {
   border-radius: 4px;
 }
 .search-filter:after {
-  content: "content"; /* Add the content here */
+  content: 'content'; /* Add the content here */
   position: absolute;
   top: 0;
   right: 0;
@@ -182,6 +269,75 @@ body {
   color: #666;
   display: block;
   margin-bottom: 0.25rem;
+}
+
+.donor-registration-container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  max-width: 600px;
+  padding: 1.3rem;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.02);
+}
+.form-container h2 {
+  margin-bottom: 2rem;
+}
+
+#donor-registration {
+  display: grid;
+  display: -ms-grid;
+  display: -moz-grid;
+  gap: 1.2rem;
+  width: 100%;
+  grid-template-columns: repeat(12, 1fr);
+}
+#donor-registration > .form-group {
+  grid-column: span 12;
+}
+#donor-registration > .form-group > input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #eee;
+  position: relative;
+  line-height: 1.5;
+}
+@media (min-width: 576px) {
+  #donor-registration > .form-group {
+    grid-column: span 6;
+  }
+  #donor-registration > .form-group.donor_name {
+    grid-column: span 8;
+  }
+  #donor-registration > .form-group.donor_dob {
+    grid-column: span 4;
+  }
+  #donor-registration
+    > .form-group:has(
+      select#division,
+      select#district,
+      select#thana,
+      select#blood_type,
+      input#last_blood_donation,
+      input#mobile
+    ) {
+    grid-column: span 4;
+  }
+}
+#donor-registration > input[type='submit'] {
+  background: rgba(255, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+#donor-registration > input[type='submit']:hover {
+  background: rgba(255, 0, 0, 0.7);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /*# sourceMappingURL=styles.css.map */

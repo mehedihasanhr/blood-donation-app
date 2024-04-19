@@ -136,3 +136,77 @@
   display: block;
   margin-bottom: 0.25rem;
 }
+
+.donor-registration-container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  max-width: 600px;
+  padding: 1.3rem;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 10px 10px rgb(0 0 0 / 2%);
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+}
+
+#donor-registration {
+  display: grid;
+  display: -ms-grid;
+  display: -moz-grid;
+  gap: 1.2rem;
+  width: 100%;
+
+  grid-template-columns: repeat(12, 1fr);
+
+  & > .form-group {
+    grid-column: span 12;
+
+    & > input {
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid #eee;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    @media (min-width: 576px) {
+      grid-column: span 6;
+      &.donor_name {
+        grid-column: span 8;
+      }
+      &.donor_dob {
+        grid-column: span 4;
+      }
+
+      &:has(
+          select#division,
+          select#district,
+          select#thana,
+          select#blood_type,
+          input#last_blood_donation,
+          input#mobile
+        ) {
+        grid-column: span 4;
+      }
+    }
+  }
+
+  & > input[type='submit'] {
+    background: rgb(255 0 0 / 90%);
+    color: rgb(255 255 255 / 90%);
+    border-color: rgb(255 255 255 / 30%);
+
+    &:hover {
+      background: rgb(255 0 0 / 70%);
+      color: rgb(255 255 255 / 90%);
+      border-color: rgb(255 255 255 / 20%);
+    }
+  }
+}

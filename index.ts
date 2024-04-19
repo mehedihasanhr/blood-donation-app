@@ -13,8 +13,7 @@ app.use(express.urlencoded({ extended: true }))
 // Middleware to parse multipart/form-data
 app.use(upload.none())
 
-// Serve static files from the 'public' folder
-const publicPath = path.join(__dirname, 'public') // Get the absolute path to the 'public' folder
+const publicPath = path.join('public')
 app.use(express.static(publicPath))
 
 app.use('/api', router)
