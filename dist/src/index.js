@@ -13,9 +13,10 @@ app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 // Middleware to parse multipart/form-data
 app.use(upload.none());
-app.use('/api', routes_1.default);
 app.use(express_1.default.static('public'));
+app.use('/api', routes_1.default);
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
     console.log(`listening port ${PORT}`);
 });
+exports.default = app;
