@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "prisma generate && node dist/index.js",
+    "postinstall": "prisma generate",
     "start:dev": "nodemon --exec npx tsx index.ts",
     "build": "rimraf ./dist && tsc"
   },
