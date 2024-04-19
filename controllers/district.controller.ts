@@ -19,6 +19,18 @@ class District {
     })
     return res.status(200).json({ data })
   }
+
+  // get district by division name
+  async districtByDivisionName(req: Request, res: Response) {
+    const id = req.params.divisionId
+    const data = await prisma.district.findMany({
+      where: { division_id: id },
+      include: { division: true, thana: true },
+    })
+
+    return res.status(200).json({ data })
+  }
+
   // get district by slug
   async districtBySlug(req: Request, res: Response) {
     const { slug } = req.params

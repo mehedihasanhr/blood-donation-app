@@ -7,6 +7,7 @@ const router = Router()
 router.get('/thana', thana.getAllThana)
 router.get('/thana/:id', thana.thanaById)
 router.get('/thana/:slug', thana.thanaBySlug)
+router.get('/thana/district/:districtId', thana.thanaByDistrict)
 
 // post request
 router.post('/thana', thana.insertThana)

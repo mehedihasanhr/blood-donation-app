@@ -44,3 +44,19 @@ model PostOffice {
   thana       Thana   @relation(fields: [thana_id], references: [id])
   thana_id    String  @db.ObjectId
 }
+
+model Donor {
+  id                  String   @id @default(auto()) @map("_id") @db.ObjectId
+  name                String
+  mobile              String   @unique
+  date_of_birth       DateTime
+  father_name         String
+  mother_name         String
+  profession          String
+  organization_name   String
+  division            String   @db.ObjectId
+  district            String   @db.ObjectId
+  thana               String   @db.ObjectId
+  blood_type          String
+  last_blood_donation DateTime
+}

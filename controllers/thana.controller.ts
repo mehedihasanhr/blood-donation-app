@@ -30,6 +30,17 @@ class Thana {
 
     return res.status(200).json({ data })
   }
+  // get thana by district
+  async thanaByDistrict(req: Request, res: Response) {
+    const district_id = req.params.districtId
+    const data = await prisma.thana.findMany({
+      where: { district_id: district_id },
+      include: { district: true, post_office: true },
+    })
+
+    return res.status(200).json({ data })
+  }
+
   // insert thana
   async insertThana(req: Request, res: Response) {
     const body = req.body
