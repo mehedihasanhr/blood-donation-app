@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="/assets/css/styles.css" />
   </head>
   <body>
@@ -11,12 +18,12 @@
       <!-- header -->
       <div class="header">
         <div class="logo">
-          <i data-lucide="heart-pulse"></i>
+          <i class="fa-solid fa-heart-pulse"> </i>
           <div class="logo-content">ConnectLife</div>
         </div>
 
         <a href="/donor-registration.html" class="be-a-donor-link">
-          <i data-lucide="plus"></i>
+          <i class="fa-solid fa-heart-pulse"> </i>
           <span> Be a donor </span>
         </a>
       </div>
@@ -26,7 +33,7 @@
         <!-- filter options -->
         <div class="filter-bar">
           <h4>Search Donors</h4>
-          <div class="filter-options">
+          <div id="donor-filter-option" class="filter-options">
             <!-- Division Selection -->
             <div>
               <label for="division" class="label">Division</label>
@@ -35,8 +42,8 @@
                 placeholder="Select division"
                 class="search-filter"
               >
-                <option value="#" selected disabled>Select division</option>
-                <option value="#" disabled>Loading...</option>
+                <option value="" selected disabled>Select division</option>
+                <option value="" disabled>Loading...</option>
               </select>
             </div>
 
@@ -44,8 +51,8 @@
             <div>
               <label for="district" class="label">District</label>
               <select id="district" class="search-filter">
-                <option value="#" selected disabled>Select district</option>
-                <option value="#" disabled>Select a division.</option>
+                <option value="" selected disabled>Select district</option>
+                <option value="" disabled>Select a division.</option>
               </select>
             </div>
 
@@ -53,18 +60,24 @@
             <div>
               <label for="thana" class="label">Thana</label>
               <select id="thana" class="search-filter">
-                <option value="#" selected disabled>Select thana</option>
-                <option value="#" disabled>Select a district.</option>
+                <option value="" selected disabled>Select thana</option>
+                <option value="" disabled>Select a district.</option>
               </select>
             </div>
           </div>
         </div>
 
         <!-- donor -->
-        <div class="donor">
+        <div class="donors">
           <h4>Donors</h4>
 
-          <div id="donor-list"></div>
+          <div id="donor-list">
+            <div class="donor-card">
+              <div class="data-loading">
+                <span>Loading...</spa>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </div>

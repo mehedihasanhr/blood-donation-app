@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   background-color: #f8f8f8;
   color: #181818;
@@ -153,9 +153,8 @@ form > .alert {
   border-bottom-right-radius: 1.5rem;
   color: #f50707;
 }
-.header .logo > svg {
-  width: 2.3rem;
-  height: 2.3rem;
+.header .logo > i.fa-heart-pulse {
+  font-size: 2rem;
   color: #f50707;
 }
 .header .logo-content {
@@ -217,7 +216,7 @@ form > .alert {
   border-radius: 4px;
 }
 .search-filter:after {
-  content: 'content'; /* Add the content here */
+  content: "content"; /* Add the content here */
   position: absolute;
   top: 0;
   right: 0;
@@ -317,27 +316,105 @@ form > .alert {
   #donor-registration > .form-group.donor_dob {
     grid-column: span 4;
   }
-  #donor-registration
-    > .form-group:has(
-      select#division,
-      select#district,
-      select#thana,
-      select#blood_type,
-      input#last_blood_donation,
-      input#mobile
-    ) {
+  #donor-registration > .form-group:has(select#division,
+  select#district,
+  select#thana,
+  select#blood_type,
+  input#last_blood_donation,
+  input#mobile) {
     grid-column: span 4;
   }
 }
-#donor-registration > input[type='submit'] {
+#donor-registration > input[type=submit] {
   background: rgba(255, 0, 0, 0.9);
   color: rgba(255, 255, 255, 0.9);
   border-color: rgba(255, 255, 255, 0.3);
 }
-#donor-registration > input[type='submit']:hover {
+#donor-registration > input[type=submit]:hover {
   background: rgba(255, 0, 0, 0.7);
   color: rgba(255, 255, 255, 0.9);
   border-color: rgba(255, 255, 255, 0.2);
+}
+
+.donors {
+  margin: 1.2rem 0;
+}
+.donors h4 {
+  margin-bottom: 1.2rem;
+}
+
+.donor-card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  padding: 10px 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  max-width: 670px;
+  border-radius: 12px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.02);
+  position: relative;
+  margin-bottom: 1rem;
+}
+.donor-card .data-loading {
+  width: 100%;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+.donor-card .data-loading span {
+  font-weight: 500;
+  margin: 0;
+}
+.donor-card > i {
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.4);
+  padding: 16px;
+}
+@media (max-width: 578px) {
+  .donor-card > i {
+    padding: 8px;
+  }
+}
+.donor-card div {
+  width: 100%;
+}
+.donor-card div .donor-name {
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+@media (max-width: 578px) {
+  .donor-card div .donor-name {
+    font-size: 14px;
+  }
+}
+.donor-card div .donor-blood-type {
+  margin-bottom: 0.2rem;
+  color: #f50707;
+}
+.donor-card div .donor-address {
+  color: rgba(0, 0, 0, 0.6);
+}
+@media (max-width: 578px) {
+  .donor-card div .donor-address {
+    font-size: 14px;
+  }
+}
+.donor-card div .donor-mobile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+.donor-card div .donor-mobile i {
+  color: rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 578px) {
+  .donor-card div .donor-mobile {
+    font-size: 14px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

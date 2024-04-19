@@ -13,7 +13,17 @@ const prisma_1 = require("../lib/prisma");
 class Donor {
     donors(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
+            const query = req.query;
+            const queryKeys = Object.keys(query);
+            const filter = {}; // Specify the type of filter
+            queryKeys.forEach((key) => {
+                const value = query[key];
+                if (value) {
+                    filter[`${key}_id`] = value;
+                }
+            });
             const data = yield prisma_1.prisma.donor.findMany({
+                where: Object.assign({}, filter),
                 include: { thana: true, division: true, district: true },
             });
             return res.status(200).json({ data });

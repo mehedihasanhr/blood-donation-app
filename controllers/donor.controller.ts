@@ -3,7 +3,20 @@ import { Request, Response } from 'express'
 
 class Donor {
   async donors(req: Request, res: Response) {
+    const query = req.query
+    const queryKeys = Object.keys(query)
+
+    const filter: { [key: string]: any } = {} // Specify the type of filter
+
+    queryKeys.forEach((key) => {
+      const value = query[key]
+      if (value) {
+        filter[`${key}_id`] = value
+      }
+    })
+
     const data = await prisma.donor.findMany({
+      where: { ...filter },
       include: { thana: true, division: true, district: true },
     })
     return res.status(200).json({ data })
