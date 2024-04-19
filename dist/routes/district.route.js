@@ -10,6 +10,7 @@ const router = (0, express_1.Router)();
 router.get('/districts', district_controller_1.default.districts);
 router.get('/district/:id', district_controller_1.default.districtById);
 router.get('/district/:slug', district_controller_1.default.districtBySlug);
+router.get('/district/division/:divisionId', district_controller_1.default.districtByDivisionName);
 // post request
 router.post('/districts', district_controller_1.default.insertDistrict);
 // delete

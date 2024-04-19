@@ -10,6 +10,7 @@ const router = (0, express_1.Router)();
 router.get('/thana', thana_controller_1.default.getAllThana);
 router.get('/thana/:id', thana_controller_1.default.thanaById);
 router.get('/thana/:slug', thana_controller_1.default.thanaBySlug);
+router.get('/thana/district/:districtId', thana_controller_1.default.thanaByDistrict);
 // post request
 router.post('/thana', thana_controller_1.default.insertThana);
 // delete

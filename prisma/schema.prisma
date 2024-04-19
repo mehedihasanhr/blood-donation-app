@@ -13,6 +13,7 @@ model Division {
   en_name  String
   bn_name  String
   district District[]
+  Donor    Donor[]
 }
 
 model District {
@@ -23,6 +24,7 @@ model District {
   division    Division @relation(fields: [division_id], references: [id])
   division_id String   @db.ObjectId
   thana       Thana[]
+  Donor       Donor[]
 }
 
 model Thana {
@@ -33,6 +35,7 @@ model Thana {
   district    District     @relation(fields: [district_id], references: [id])
   district_id String       @db.ObjectId
   post_office PostOffice[]
+  Donor       Donor[]
 }
 
 model PostOffice {
@@ -54,9 +57,12 @@ model Donor {
   mother_name         String
   profession          String
   organization_name   String
-  division            String   @db.ObjectId
-  district            String   @db.ObjectId
-  thana               String   @db.ObjectId
+  division            Division @relation(fields: [division_id], references: [id])
+  division_id         String   @db.ObjectId
+  district            District @relation(fields: [district_id], references: [id])
+  district_id         String   @db.ObjectId
+  thana               Thana    @relation(fields: [thana_id], references: [id])
+  thana_id            String   @db.ObjectId
   blood_type          String
   last_blood_donation DateTime
 }

@@ -42,6 +42,17 @@ class Thana {
             return res.status(200).json({ data });
         });
     }
+    // get thana by district
+    thanaByDistrict(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const district_id = req.params.districtId;
+            const data = yield prisma_1.prisma.thana.findMany({
+                where: { district_id: district_id },
+                include: { district: true, post_office: true },
+            });
+            return res.status(200).json({ data });
+        });
+    }
     // insert thana
     insertThana(req, res) {
         return __awaiter(this, void 0, void 0, function* () {

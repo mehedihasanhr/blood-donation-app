@@ -116,6 +116,8 @@ function handleDistrictSelection() {
 function handleDonorInsertForm() {
   const donorRegForm = document.querySelector('#donor-registration')
 
+  if (!donorRegForm) return
+
   donorRegForm.addEventListener('submit', async function (event) {
     event.preventDefault()
 

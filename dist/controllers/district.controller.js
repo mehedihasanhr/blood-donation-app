@@ -31,6 +31,17 @@ class District {
             return res.status(200).json({ data });
         });
     }
+    // get district by division name
+    districtByDivisionName(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const id = req.params.divisionId;
+            const data = yield prisma_1.prisma.district.findMany({
+                where: { division_id: id },
+                include: { division: true, thana: true },
+            });
+            return res.status(200).json({ data });
+        });
+    }
     // get district by slug
     districtBySlug(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
