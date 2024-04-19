@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "prisma generate && node dist/index.js",
-    "start:dev": "nodemon --exec npx tsx src/index.ts",
+    "start:dev": "nodemon --exec npx tsx index.ts",
     "build": "rimraf ./dist && tsc"
   },
   "keywords": [],
