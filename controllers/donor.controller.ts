@@ -9,7 +9,7 @@ class Donor {
     return res.status(200).json({ data })
   }
 
-  async insertDonor(req, res) {
+  async insertDonor(req: Request, res: Response) {
     // Extract form data from req.body
     const {
       name,
