@@ -13,10 +13,12 @@ app.use(express.urlencoded({ extended: true }))
 app.use(upload.none())
 
 app.use(express.static('public'))
-app.use('/api', router)
 
+app.use('/api', router)
 const PORT = process.env.PORT
 
 app.listen(PORT, () => {
   console.log(`listening port ${PORT}`)
 })
+
+export default app
