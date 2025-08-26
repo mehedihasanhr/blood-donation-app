@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   handleDivisionSelection()
   handleDistrictSelection()
   handleThanaSelection()
+  handleBloodSelection()
 
   // donor form
   handleDonorInsertForm()
@@ -44,6 +45,9 @@ async function fetchDonor() {
     const division = filterBar.querySelector('div > select#division').value
     const district = filterBar.querySelector('div > select#district').value
     const thana = filterBar.querySelector('div > select#thana').value
+    const blood = filterBar.querySelector('div > select#blood')
+      ? filterBar.querySelector('div > select#blood').value
+      : ''
 
     function removeEmpty(obj) {
       return Object.fromEntries(
@@ -55,6 +59,7 @@ async function fetchDonor() {
       division,
       district,
       thana,
+      blood_type: blood,
     })
 
     const queryString = new URLSearchParams(queryObj).toString()
@@ -232,6 +237,15 @@ function handleDistrictSelection() {
 function handleThanaSelection() {
   const thanaEl = document.querySelector('#thana')
   thanaEl.addEventListener('change', async function (event) {
+    await fetchDonor()
+  })
+}
+
+// select blood group
+function handleBloodSelection() {
+  const bloodEl = document.querySelector('#blood')
+  if (!bloodEl) return
+  bloodEl.addEventListener('change', async function (event) {
     await fetchDonor()
   })
 }

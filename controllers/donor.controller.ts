@@ -11,7 +11,12 @@ class Donor {
     queryKeys.forEach((key) => {
       const value = query[key]
       if (value) {
-        filter[`${key}_id`] = value
+        // if filtering by blood_type use direct field, otherwise map to relation id fields
+        if (key === 'blood_type') {
+          filter['blood_type'] = value
+        } else {
+          filter[`${key}_id`] = value
+        }
       }
     })
 
